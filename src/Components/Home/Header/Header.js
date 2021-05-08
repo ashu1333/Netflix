@@ -7,6 +7,8 @@ import "./header.css";
 const Header = () => {
   return (
     <div className="header">
+      {/* //NAVIGATION OF HEADER// */}
+
       <div className="header__nav">
         <Link tp="/">
           <img className="header__logo" src={Logo} alt="Netflix Logo" />
@@ -23,6 +25,8 @@ const Header = () => {
         </div>
       </div>
 
+      {/* TITLES START */}
+
       <span className="header__title">
         Unlimited movies, TV shows and more.
       </span>
@@ -31,6 +35,7 @@ const Header = () => {
         Ready to watch? Enter your email to create or restart your membership.
       </span>
 
+      {/* BOTTOM OF HEADER->INPUT + BUTTON  */}
       <div className="header__bottom">
         <input
           className="header__email"
