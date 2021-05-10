@@ -15,11 +15,11 @@ const Header = () => {
         </Link>
 
         <div className="header__right">
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link style={{ textn: "none" }} to="/">
             <span className="header__browse">Browse</span>
           </Link>
 
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link style={{ textDecoration: "none" }} to="/signin">
             <span className="header__signIn">{"Sign In"}</span>
           </Link>
         </div>
