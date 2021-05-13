@@ -15,7 +15,7 @@ const Header = () => {
         </Link>
 
         <div className="header__right">
-          <Link style={{ textn: "none" }} to="/">
+          <Link style={{ textn: "none" }} to="/browse">
             <span className="header__browse">Browse</span>
           </Link>
 
