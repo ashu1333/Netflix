@@ -1,21 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../../Home/Header/logo.svg";
 import { Link, NavLink } from "react-router-dom";
 import { ArrowDropDown } from "@material-ui/icons";
 import Background from "./theIrishman.jpg";
 import profile from "./user.png";
 import "./header.css";
+import request from "../../../api/request";
+import axios from "axios";
+
 const Header = () => {
   const showProfileHandler = () => {};
-  const handleScroll = () => {};
+
   const [myprofile, showProfile] = useState(false);
+  const [show, setShow] = useState(false);
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await axios.get(request.fetchActionMovies, {});
+      console.log(res.data.results);
+      setMovies(res.data.results[Math.floor(Math.random() * (20 - 0) + 0)]);
+    }
+
+    fetchData();
+  }, []);
+
+  function handleScroll() {
+    if (window.scrollY > 10) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="browseH" style={{ backgroundImage: `URL(${Background})` }}>
-      <div className="browserH__navbar">
+    <div
+      className="browseH"
+      style={{
+        backgroundImage: `url("https://image.tmdb.org/t/p/original${movies?.backdrop_path}")`,
+      }}
+    >
+      <div className={`browseH__navbar ${show && "browseH_Y"}`}>
         <div className="browseH__navbarLeft">
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <img className="browseH__logo" src={Logo} width="20%" />
-          </Link>
+          <Link to="/" style={{ textDecoration: "none" }}></Link>
+          <img className="browseH__logo" src={Logo} />
 
           <NavLink
             activeClassName="browseH__active"
@@ -59,27 +94,13 @@ const Header = () => {
             <img className="browseH__profile" src={profile} alt="Profile" />
             <ArrowDropDown className="browseH__arrow" />
           </div>
-          <div className="browseH__p">
-            {/* <Profile className="browseH__pc" /> */}
-          </div>
-          {/* {
-            myprofile ? (
-              <div className="browseH__p">
-                <Profile className="browseH__pc" />
-              </div>
-            ) : null
-          } */}
         </div>
       </div>
-
       <div className="browseH__banner">
-        <span className="browseH__banner__title">Watch The Irishman Now</span>
-        <span className="browseH__desc">
-          'The Irishman' is a fictionalized true crime story about the
-          disappearance of Jimmy Hoffa, a mystery that still hasn't been solved.
-          Long-time International Brotherhood of Teamsters boss, James "Jimmy"
-          Hoffa, went missing in 1975.
+        <span className="browseH__banner__title">
+          {movies?.title || movies.name || movies?.orignal_name}
         </span>
+        <span className="browseH__desc">{movies?.overview}</span>
         <div className="browseH__button">
           <span className="browseH__play">Watch Now</span>
           <span className="browseH__add" onClick={handleScroll}>

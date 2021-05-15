@@ -10,23 +10,31 @@
   margin-bottom: 20px;
 }
 
-.browserH__navbar {
+.browseH__navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 6px 40px;
+  padding: 15px 40px;
+
   display: flex;
   align-items: center;
+
   justify-content: space-between;
+
   z-index: 100;
   transition-timing-function: ease-in;
   transition: all 0.5s;
 }
 
-.browserH__navbarLeft {
+.browseH__navbarLeft {
   display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.browseH_Y {
+  background-color: black;
 }
 
 .browseH__logo {
@@ -41,7 +49,9 @@
   font-size: 19px;
   font-weight: 400;
   margin-left: 25px;
+
   cursor: pointer;
+  padding: 20px 0px;
 }
 
 .browseH__link:hover {
@@ -64,12 +74,15 @@
   background: transparent;
   border: 1px solid white;
 }
-
-.browseH_navbarRight {
+.browseH__navbarRight {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+}
+.browseH__navbarRight {
+  display: flex;
+  align-items: center;
 }
 
 .browseH__arrow {
