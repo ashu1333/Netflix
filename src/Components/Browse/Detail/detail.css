@@ -1,0 +1,143 @@
+.detail {
+  margin-top: 1px;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 5%;
+}
+
+.seperator__detail {
+  height: 2px;
+  margin-left: 20px;
+  margin-right: 30px;
+  width: 20%;
+
+  border: 2px solid red;
+  margin-bottom: 20px;
+}
+.movie-detail__title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.movie__detail {
+  padding-right: 10px;
+  width: 100%;
+}
+
+.movie__release-date {
+  font-size: 13px;
+}
+
+.cast__link {
+  font-size: 12.5px;
+  text-decoration: none;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+.movie__star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back__text {
+  margin-left: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.seperator-detail {
+  border: 2px solid #e50914;
+  height: 2px;
+}
+.star {
+  margin-top: 3px;
+}
+
+.genre {
+  margin-right: 10px;
+}
+
+.detail__container {
+  background-color: black;
+}
+.genre__seperator,
+.release-date {
+  margin-left: 10px;
+}
+
+.movie__overview {
+  font-size: 15px;
+  margin: 15px 0;
+  line-height: 23px;
+}
+
+.casts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+}
+.cast__name {
+  font: size 12%;
+  text-align: center;
+}
+.cast__image {
+  border-radius: 10px;
+  width: 100px;
+  height: auto;
+  border: 2px solid red;
+}
+.cast__image:hover {
+  transform: scale(1.09);
+}
+
+.player__wrapper {
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+  height: 0;
+}
+
+.react__player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.back-to-home {
+  text-decoration: none;
+  padding: 10px 50px;
+  /* margin-bottom: 2px; */
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  color: red;
+}
+
+.home__text {
+  margin-left: 10px;
+}
+.check {
+  padding: 20px;
+  display: flex;
+
+  align-items: flex-start;
+}
+
+.back__arrow {
+  font-size: 30px !important;
+  margin-left: -5px;
+}
+
+.cast__info {
+  margin-top: 20px;
+}
+/* .cast__info:hover {
+  outline: 2px solid red;
+  border-radius: 20px;
+} */

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import request from "../../../api/request";
+
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./row.css";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+
 const baseUrl = "https://api.themoviedb.org/3";
 
 const Row = ({ fetchUrl, title, isLargeRow }) => {
@@ -23,12 +24,17 @@ const Row = ({ fetchUrl, title, isLargeRow }) => {
       <div className="row__posters">
         {movies.map((movie) => (
           <>
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt={movie.name}
-              className="row__poster"
-              key={movie.id}
-            />
+            <Link
+              to={{ pathname: `/detail/${movie.id}` }}
+              style={{ textDecoration: "none" }}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.name}
+                className="row__poster"
+                key={movie.id}
+              />
+            </Link>
           </>
         ))}
       </div>

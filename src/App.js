@@ -4,6 +4,8 @@ import Signin from "./Components/Signin/Signin";
 import { Route, Switch } from "react-router-dom";
 import Signup from "./Components/Signup/Signup";
 import Content from "./Components/Browse/Content/Content";
+import Detail from "./Components/Browse/Detail/Detail";
+import MyList from "./Components/Browse/MyList/MyList";
 function App() {
   return (
     <div className="App">
@@ -24,8 +26,12 @@ function App() {
           <Content />
         </Route>
 
-        <Route path="/browse/detail/:id">
-          <Content />
+        <Route path="/mylist">
+          <MyList />
+        </Route>
+
+        <Route path="/detail/:id" exact>
+          <Detail />
         </Route>
       </Switch>
     </div>

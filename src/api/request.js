@@ -10,6 +10,9 @@ const request = {
   fetchHorroMovies: `${endpoint}/discover/movie?api_key=${APIKEY}&with_genres=27`,
   fetchRomanticMovies: `${endpoint}/discover/movie?api_key=${APIKEY}&with_genres=10749`,
   fetchDocumentaries: `${endpoint}/discover/movie?api_key=${APIKEY}&with_genres=99`,
+  videoURL: `${endpoint}/movie`,
+  movieDetailURL: `${endpoint}/movie`,
+  movieCastURL: `${endpoint}/movie`,
 };
 
 export default request;
