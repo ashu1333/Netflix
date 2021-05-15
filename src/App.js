@@ -23,6 +23,10 @@ function App() {
         <Route path="/browse">
           <Content />
         </Route>
+
+        <Route path="/browse/detail/:id">
+          <Content />
+        </Route>
       </Switch>
     </div>
   );
