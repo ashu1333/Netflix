@@ -1,0 +1,21 @@
+footer {
+  margin-top: 20px;
+  padding-left: 35px;
+  margin-bottom: 25px;
+}
+
+.social-media {
+  margin-bottom: 10px;
+}
+
+.copyright_text {
+  font-size: 13px;
+  color: grey;
+  margin-left: 3px;
+}
+
+@media screen and (max-width: 480px) {
+  footer {
+    padding-left: 20px;
+  }
+}

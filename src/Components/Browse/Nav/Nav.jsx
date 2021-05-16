@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { ArrowDropDown } from "@material-ui/icons";
 import Background from "./theIrishman.jpg";
 import profile from "./user.png";
+import Profile from "../Profile/Profile";
 import "./nav.css";
 
 const Nav = () => {
@@ -23,7 +24,10 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const showProfileHandler = () => {};
+
+  const showProfileHandler = () => {
+    showProfile(!myprofile);
+  };
 
   return (
     <>
@@ -44,7 +48,7 @@ const Nav = () => {
             to="/browse/series"
             style={{ textDecoration: "none" }}
           >
-            <span className="browseH__link">Series</span>
+            <span className="browseH__link link2">Series</span>
           </NavLink>
 
           <NavLink
@@ -59,11 +63,6 @@ const Nav = () => {
             activeClassName="browseH__active"
             to="/browse/mylist"
             style={{ textDecoration: "none" }}
-          ></NavLink>
-          <NavLink
-            activeClassName="browseH__active"
-            to="/mylist"
-            style={{ textDecoration: "none" }}
           >
             <span className="browseH__mylist">My List(2)</span>
           </NavLink>
@@ -74,6 +73,12 @@ const Nav = () => {
             <img className="browseH__profile" src={profile} alt="Profile" />
             <ArrowDropDown className="browseH__arrow" />
           </div>
+
+          {myprofile ? (
+            <div className="browseH__p">
+              <Profile className="browseH__pc" />
+            </div>
+          ) : null}
         </div>
       </div>
     </>

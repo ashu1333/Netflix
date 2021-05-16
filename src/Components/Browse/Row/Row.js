@@ -25,7 +25,7 @@ const Row = ({ fetchUrl, title, isLargeRow }) => {
         {movies.map((movie) => (
           <>
             <Link
-              to={{ pathname: `/detail/${movie.id}` }}
+              to={{ pathname: `browse/detail/${movie.id}` }}
               style={{ textDecoration: "none" }}
             >
               <img

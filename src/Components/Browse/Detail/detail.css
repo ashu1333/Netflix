@@ -137,7 +137,64 @@
 .cast__info {
   margin-top: 20px;
 }
-/* .cast__info:hover {
-  outline: 2px solid red;
-  border-radius: 20px;
-} */
+
+@media screen and (max-width: 450px) {
+  .detail__container {
+    background-color: black;
+    height: 100vh;
+    padding: 3%;
+  }
+  .detail,
+  .back-to-home {
+    padding: 0px 13px;
+  }
+
+  .detail {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+  }
+  .seperator__detail {
+    margin: 0 13px;
+  }
+
+  .movie__star {
+    align-items: unset;
+  }
+
+  .movie-detail__title {
+    font-size: 1.2em;
+  }
+
+  .movie__overview {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .movie-detail__title > h1 {
+    font-size: 1.2rem;
+  }
+
+  .movie__detail__extra {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .movie__overview {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .casts {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cast__image {
+    width: 80%;
+  }
+  .browseH__mylist {
+    padding: 3px;
+  }
+}

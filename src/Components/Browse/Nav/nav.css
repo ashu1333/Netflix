@@ -82,3 +82,39 @@
   width: 35px;
   object-fit: contain;
 }
+
+@media screen and (max-width: 450px) {
+  .browseH__navbar {
+    padding: 5px;
+  }
+
+  .browseH__logo {
+    height: 19px;
+    width: 75px;
+    margin-top: 5px;
+    margin-right: 0px;
+  }
+
+  .browseH__link {
+    font-size: 12px;
+    margin-left: 9px;
+  }
+
+  .browseH__mylist {
+    margin-left: 9px;
+    font-size: 11px;
+    padding: 1px 5px;
+    border-radius: 5px;
+  }
+
+  .browseH__profile {
+    width: 20px;
+  }
+  .link2 {
+    display: none;
+  }
+
+  .browseH__arrow {
+    font-size: 17px !important;
+  }
+}
