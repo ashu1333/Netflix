@@ -33,12 +33,13 @@ const Nav = () => {
     <>
       <div className={`browseH__navbar ${show && "browseH_Y"}`}>
         <div className="browseH__navbarLeft">
-          <Link to="/" style={{ textDecoration: "none" }}></Link>
-          <img className="browseH__logo" src={Logo} />
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <img className="browseH__logo" src={Logo} />
+          </Link>
 
           <NavLink
             activeClassName="browseH__active"
-            to="/"
+            to="/browse"
             style={{ textDecoration: "none" }}
           >
             <span className="browseH__link browseH__link2">Home</span>
@@ -53,7 +54,7 @@ const Nav = () => {
 
           <NavLink
             activeClassName="browseH__active"
-            to="/browse/movies"
+            to="/browse"
             style={{ textDecoration: "none" }}
           >
             <span className="browseH__link">Movies</span>
