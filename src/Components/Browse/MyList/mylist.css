@@ -33,3 +33,21 @@
   align-items: center;
   margin-top: 50px;
 }
+
+@media screen and (max-width: 450px) {
+  .myList__notEmpty {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
+
+  .myList__notEmpty > span {
+    margin-top: 50px;
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
+
+  .myList__item {
+    flex-direction: column;
+    margin: 1px 0px;
+  }
+}

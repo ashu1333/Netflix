@@ -63,3 +63,34 @@
   background: transparent;
   border: 1px solid white;
 }
+
+@media screen and (max-width: 450px) {
+  .listComponent {
+    height: 460px;
+    width: 280px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+  }
+  .listComponent__category1 {
+    font-size: 20px;
+  }
+
+  .listComponent__title {
+    font-size: 19px;
+    margin-top: 12px;
+  }
+
+  .listComponent__desc {
+    font-size: 13px;
+    padding: 0 10px;
+    margin-top: 14px;
+  }
+
+  .listComponent__remove {
+    padding: 6px 15px;
+    border-radius: 5px;
+    margin-top: 25px;
+    font-size: 15px;
+  }
+}
