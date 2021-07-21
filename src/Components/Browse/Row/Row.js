@@ -8,11 +8,11 @@ const baseUrl = "https://api.themoviedb.org/3";
 
 const Row = ({ fetchUrl, title, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
-  console.log(fetchUrl);
+
   useEffect(() => {
     async function fetchData() {
       const res = await axios.get(fetchUrl, {});
-      console.log(res.data.results);
+
       setMovies(res.data.results);
     }
 

@@ -10,7 +10,7 @@ import Detail from "./Components/Browse/Detail/Detail";
 import MyList from "./Components/Browse/MyList/MyList";
 function App() {
   const [{ user }, dispatch] = useStateValue();
-  console.log(user);
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -31,7 +31,6 @@ function App() {
     };
   }, []);
 
-  console.log("User is >>>", user);
   return (
     <div className="App">
       <Switch>

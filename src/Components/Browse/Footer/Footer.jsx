@@ -8,27 +8,30 @@ const Footer = () => {
   return (
     <footer>
       <div className="social-media">
-        <a href="/">
+        <a href="https://www.facebook.com/netflix/" target="_blank">
           {" "}
           <FacebookIcon
             className="social-media__icons"
             style={{ fontSize: "35px", color: "grey" }}
           />
         </a>
-        <a href="/">
+        <a href="https://www.instagram.com/netflix_in/?hl=en" target="_blank">
           <InstagramIcon
             className="social-media__icons"
             style={{ fontSize: "35px", marginLeft: "20px", color: "grey" }}
           />
         </a>
-        <a href="/">
+        <a href="https://twitter.com/NetflixIndia" target="_blank">
           {" "}
           <TwitterIcon
             className="social-media__icons"
             style={{ fontSize: "35px", marginLeft: "20px", color: "grey" }}
           />
         </a>
-        <a href="/">
+        <a
+          href="https://www.youtube.com/channel/UCWOA1ZGywLbqmigxE4Qlvuw"
+          target="_blank"
+        >
           <YouTubeIcon
             className="social-media__icons"
             style={{ fontSize: "35px", marginLeft: "20px", color: "grey" }}

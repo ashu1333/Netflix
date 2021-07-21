@@ -8,7 +8,7 @@ const Profile = () => {
   let history = useHistory();
 
   const [{ myList, user }, dispatch] = useStateValue();
-  console.log(user);
+
   const redirectToHome = () => {
     history.push("./");
   };

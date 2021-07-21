@@ -47,13 +47,13 @@ const Nav = () => {
           >
             <span className="browseH__link browseH__link2">Home</span>
           </NavLink>
-          <NavLink
+          {/* <NavLink
             activeClassName="browseH__active"
             to="/browse/series"
             style={{ textDecoration: "none" }}
           >
             <span className="browseH__link link2">Series</span>
-          </NavLink>
+          </NavLink> */}
 
           <NavLink
             activeClassName="browseH__active"

@@ -15,10 +15,8 @@ const Detail = () => {
   const [videoKey, setVideoKey] = useState();
   const [cast, setCast] = useState([]);
   const [{ myList }, dispatch] = useStateValue();
+  const [added, setAdded] = useState(false);
 
-  // console.log(params.id);
-  // console.log(request.movieDetailURL);
-  // console.log(movieDetail);
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
@@ -64,6 +62,8 @@ const Detail = () => {
   const getWiki = (actor) => actor.replace(new RegExp(" ", "g"), "_");
 
   const addToMyList = () => {
+    setAdded(!added);
+
     dispatch({
       type: "ADD_TO_MYLIST",
       item: {
@@ -110,9 +110,13 @@ const Detail = () => {
               <span className="genre__seperator">|</span>{" "}
               <span className="release__date">{movieDetail.release_date}</span>
               <span className="genre__seperator">|</span>{" "}
-              <span className="browseH__mylist" onClick={addToMyList}>
-                Add to List
-              </span>
+              <button
+                className="browseH__mylist"
+                onClick={addToMyList}
+                disabled={added ? true : false}
+              >
+                {added ? "Added" : "Add to List"}
+              </button>
               <p className="movie__overview">{movieDetail.overview}</p>
             </div>
           </div>
@@ -143,9 +147,9 @@ const Detail = () => {
                     alt="actorPhoto"
                     className="cast__image"
                   />
-                  <p className="cast__name">{actor.name}</p>
                 </a>
               )}
+              <p className="cast__name">{actor.name}</p>
             </div>
           ))}
         </div>

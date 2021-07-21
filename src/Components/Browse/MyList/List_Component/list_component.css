@@ -1,6 +1,6 @@
 .listComponent {
   color: white;
-  height: 570px;
+
   width: 360px;
   background: rgba(0, 0, 0, 0.6);
   margin-right: 25px;
@@ -9,6 +9,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
 }
 
 .listComponent__category {
@@ -48,6 +51,9 @@
   margin-top: 22px;
 }
 
+.listComponent__button {
+  padding: 40px;
+}
 .listComponent__remove {
   color: white;
   background-color: red;
@@ -66,7 +72,6 @@
 
 @media screen and (max-width: 450px) {
   .listComponent {
-    height: 460px;
     width: 280px;
     margin-right: 0px;
     margin-left: 0px;

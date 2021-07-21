@@ -6,7 +6,7 @@ import { useStateValue } from "../../../StateProvider/StateProvider";
 
 const MyList = () => {
   const [{ myList, user }] = useStateValue();
-  console.log(myList);
+
   return (
     <div className="myList">
       <Nav />

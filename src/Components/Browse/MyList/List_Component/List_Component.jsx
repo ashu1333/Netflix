@@ -20,9 +20,11 @@ const List_Component = ({ id, desc, image, title }) => {
       <div className="listComponent__bottom">
         <span className="listComponent__title">{title}</span>
         <span className="listComponent__desc">{desc}</span>
-        <span className="listComponent__remove" onClick={removeFromMyList}>
-          Remove From My List
-        </span>
+        <div className="listComponent__button">
+          <span className="listComponent__remove" onClick={removeFromMyList}>
+            Remove From My List
+          </span>
+        </div>
       </div>
     </div>
   );
