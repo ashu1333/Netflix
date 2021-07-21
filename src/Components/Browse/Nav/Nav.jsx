@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Logo from "../../Home/Header/logo.svg";
 import { Link, NavLink } from "react-router-dom";
 import { ArrowDropDown } from "@material-ui/icons";
-import Background from "./theIrishman.jpg";
+
 import profile from "./user.png";
 import Profile from "../Profile/Profile";
 import { useStateValue } from "../../../StateProvider/StateProvider";
