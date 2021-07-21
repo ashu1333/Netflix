@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "./logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "../../../firebase";
 import Footer from "../../Home/Footer/Footer";
 import "./form.css";
 
 const Form = () => {
+  const history = useHistory();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const signInHandler = (event) => {
+    event.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/browse");
+      })
+      .catch((error) => {
+        setPassword("");
+        // alert(error.message);
+        setError(error.message);
+      });
+  };
   return (
     <div className="form">
       <div className="form__top">
@@ -15,14 +35,24 @@ const Form = () => {
         <div className="form__form1">
           <div className="form__form">
             <span className="form__title">Sign In</span>
-            <form>
-              <input type="email" className="form__input" placeholder="Email" />
+            <form onSubmit={signInHandler}>
+              <input
+                type="email"
+                className="form__input"
+                placeholder="Email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
               <input
                 type="password"
                 className="form__input"
                 placeholder="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
               />
-              <button className="form__button">Sign in</button>
+              <button type="submit" className="form__button">
+                Sign in
+              </button>
             </form>
 
             <div className="form__subtitle">

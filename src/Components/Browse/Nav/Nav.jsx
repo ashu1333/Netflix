@@ -5,11 +5,14 @@ import { ArrowDropDown } from "@material-ui/icons";
 import Background from "./theIrishman.jpg";
 import profile from "./user.png";
 import Profile from "../Profile/Profile";
+import { useStateValue } from "../../../StateProvider/StateProvider";
+
 import "./nav.css";
 
 const Nav = () => {
   const [myprofile, showProfile] = useState(false);
   const [show, setShow] = useState(false);
+  const [{ myList, user }, dispatch] = useStateValue();
   function handleScroll() {
     if (window.scrollY > 10) {
       setShow(true);
@@ -65,7 +68,9 @@ const Nav = () => {
             to="/browse/mylist"
             style={{ textDecoration: "none" }}
           >
-            <span className="browseH__mylist">My List(2)</span>
+            <span className="browseH__mylist">
+              My List <small>({myList?.length})</small>
+            </span>
           </NavLink>
         </div>
 

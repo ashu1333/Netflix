@@ -7,14 +7,18 @@ import { useParams, Link } from "react-router-dom";
 import request from "../../../api/request";
 import "./detail.css";
 import ReactPlayer from "react-player";
+import { useStateValue } from "../../../StateProvider/StateProvider";
 
 const Detail = () => {
   let params = useParams();
   const [movieDetail, setMovieDetail] = useState([]);
   const [videoKey, setVideoKey] = useState();
   const [cast, setCast] = useState([]);
-  console.log(params.id);
-  console.log(request.movieDetailURL);
+  const [{ myList }, dispatch] = useStateValue();
+
+  // console.log(params.id);
+  // console.log(request.movieDetailURL);
+  // console.log(movieDetail);
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get(
@@ -48,7 +52,6 @@ const Detail = () => {
         },
       });
       setCast(cast);
-      console.log(cast);
     }
 
     fetchData();
@@ -59,6 +62,18 @@ const Detail = () => {
   }
 
   const getWiki = (actor) => actor.replace(new RegExp(" ", "g"), "_");
+
+  const addToMyList = () => {
+    dispatch({
+      type: "ADD_TO_MYLIST",
+      item: {
+        id: movieDetail.id,
+        image: movieDetail.backdrop_path,
+        title: movieDetail.original_title,
+        desc: movieDetail.overview,
+      },
+    });
+  };
   return (
     <div className="detail__container">
       <Link className="back-to-home" to="/browse">
@@ -95,7 +110,9 @@ const Detail = () => {
               <span className="genre__seperator">|</span>{" "}
               <span className="release__date">{movieDetail.release_date}</span>
               <span className="genre__seperator">|</span>{" "}
-              <span className="browseH__mylist">Add to List</span>
+              <span className="browseH__mylist" onClick={addToMyList}>
+                Add to List
+              </span>
               <p className="movie__overview">{movieDetail.overview}</p>
             </div>
           </div>

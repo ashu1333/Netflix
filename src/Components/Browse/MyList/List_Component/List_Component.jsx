@@ -1,23 +1,28 @@
 import "./list_component.css";
-
-const List_Component = () => {
+import { useStateValue } from "../../../../StateProvider/StateProvider";
+const List_Component = ({ id, desc, image, title }) => {
+  const [{ myList }, dispatch] = useStateValue();
+  const removeFromMyList = () => {
+    dispatch({
+      type: "REMOVE_FROM_MYLIST",
+      id: id,
+    });
+  };
   return (
     <div className="listComponent">
       <div className="listComponent__category">
-        <span className="listComponent__category1">Category-Movies</span>
+        <span className="listComponent__category1">Movie</span>
       </div>
       <img
         className="listComponent__image"
-        src="https://netflix-10001.web.app/images/series/comedies/arrested-development/small.jpg"
+        src={`https://image.tmdb.org/t/p/w500/${image}`}
       />
       <div className="listComponent__bottom">
-        <span className="listComponent__title">Arrested Development</span>
-        <span className="listComponent__desc">
-          {
-            "he Bluth family, once a prominent name in the business, loses everything after the head patriarch gets convicted for fraud"
-          }
+        <span className="listComponent__title">{title}</span>
+        <span className="listComponent__desc">{desc}</span>
+        <span className="listComponent__remove" onClick={removeFromMyList}>
+          Remove From My List
         </span>
-        <span className="listComponent__remove">Remove From My List</span>
       </div>
     </div>
   );

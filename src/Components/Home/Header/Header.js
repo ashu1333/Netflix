@@ -3,8 +3,17 @@ import Logo from "./logo.svg";
 import { Link } from "react-router-dom";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import "./header.css";
+import { auth } from "../../../firebase";
+import { useStateValue } from "../../../StateProvider/StateProvider";
 
 const Header = () => {
+  const [{ user }, dispatch] = useStateValue();
+
+  const logOut = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
   return (
     <div className="header">
       {/* //NAVIGATION OF HEADER// */}
@@ -15,12 +24,16 @@ const Header = () => {
         </Link>
 
         <div className="header__right">
-          <Link style={{ textn: "none" }} to="/browse">
-            <span className="header__browse">Browse</span>
-          </Link>
+          {user ? (
+            <Link style={{ textDecoration: "none" }} to="/browse">
+              <span className="header__browse">Browse</span>
+            </Link>
+          ) : null}
 
-          <Link style={{ textDecoration: "none" }} to="/signin">
-            <span className="header__signIn">{"Sign In"}</span>
+          <Link style={{ textDecoration: "none" }} to={!user && "/signin"}>
+            <span className="header__signIn" onClick={logOut}>
+              {user ? "Log Out" : "Sign In"}
+            </span>
           </Link>
         </div>
       </div>
