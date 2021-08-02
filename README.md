@@ -1,6 +1,6 @@
 Tech Stack - React js,
-             Html/Css
-             Firebase
+             Html/Css,
+             Firebase,
              Context api
              
 Api Used -   TMDB Api
@@ -17,3 +17,17 @@ Landing Page -
 
 Login Page-
 [![Screenshot-3.png](https://i.postimg.cc/9FDj0CKW/Screenshot-3.png)](https://postimg.cc/MvJLr2z4)
+
+ Home Page -
+ [![Screenshot-4.png](https://i.postimg.cc/tJXGB3Zm/Screenshot-4.png)](https://postimg.cc/BLwz61Cx)
+ 
+ 
+ Movies List -
+ [![Screenshot-5.png](https://i.postimg.cc/HkfGqD8M/Screenshot-5.png)](https://postimg.cc/75MQzRVP)
+ 
+ Movie Detail Page -
+ [![Screenshot-7.png](https://i.postimg.cc/Y9MP7prv/Screenshot-7.png)](https://postimg.cc/sBHm9CZz)
+ 
+ 
+ Profile Section
+ [![Screenshot-8.png](https://i.postimg.cc/Fs8nRbF5/Screenshot-8.png)](https://postimg.cc/xcGPpzbt)
