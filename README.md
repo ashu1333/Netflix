@@ -30,7 +30,7 @@ Login Page-
  
  
  Profile Section -
- [![Screenshot-8.png](https://i.postimg.cc/Fs8nRbF5/Screenshot-8.png)](https://postimg.cc/xcGPpzbt)
+ [![Screenshot-6.png](https://i.postimg.cc/FKBxWNft/Screenshot-6.png)](https://postimg.cc/67CRTsLz)
 
 
 Add to list -
