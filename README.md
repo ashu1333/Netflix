@@ -1,4 +1,4 @@
-Tech Stack - React js
+Tech Stack - React js,
              Html/Css
              Firebase
              Context api
